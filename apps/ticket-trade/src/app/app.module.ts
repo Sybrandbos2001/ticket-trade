@@ -6,11 +6,13 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NxWelcomeComponent
+    NxWelcomeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
