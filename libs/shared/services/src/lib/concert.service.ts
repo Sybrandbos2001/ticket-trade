@@ -50,4 +50,10 @@ export class ConcertService {
   public getConcertById(Id: string): Concert {
     return this.concerts.filter((concert: Concert) => concert.id === Id)[0];
   }
+
+  public addConcert(concert: Concert): void {
+    const id = (this.concerts.length) + 1;
+    concert.id = id.toString();
+    this.concerts.push(concert);
+  }
 }

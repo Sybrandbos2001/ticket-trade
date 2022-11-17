@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="mt-5 text-center">Een <span class="title-blue">concert</span> aanmaken</h1>
+        <form #form="ngForm" (ngSubmit)="onSubmit()" class="px-5" novalidate>
+            <div class="form-row">
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="name" class="mb-1 fw-bold">Naam</label>
+                    <input type="text" name="name" class="form-control" id="name" required [(ngModel)]="concert.name" #name="ngModel" minlength="3" required [ngClass]="{ 'is-invalid': name.invalid }">
+                    <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
+                        <div *ngIf="name.errors!['required']">
+                            Naam is verplicht
+                        </div>
+                        <div *ngIf="name.errors!['minlength']">
+                            Naam moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="description" class="mb-1 fw-bold">Omschrijving</label>
+                    <textarea name="description" class="form-control" id="description" required [(ngModel)]="concert.description" #description="ngModel" minlength="3" required [ngClass]="{ 'is-invalid': description.invalid }"></textarea>
+                    <div *ngIf="description.invalid && description.touched" class="invalid-feedback">
+                        <div *ngIf="description.errors!['required']">
+                            Omschrijving is verplicht
+                        </div>
+                        <div *ngIf="description.errors!['minlength']">
+                            Omschrijving moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="startDateTime" class="mb-1 fw-bold">Start datum</label>
+                    <input type="date" name="startDateTime" class="form-control" id="startDateTime" required [(ngModel)]="concert.startDateTime" #startDateTime="ngModel" required [ngClass]="{ 'is-invalid': startDateTime.invalid }">
+                    <div *ngIf="startDateTime.invalid && startDateTime.touched" class="invalid-feedback">
+                        <div *ngIf="startDateTime.errors!['required']">
+                            Start datum tijd is verplicht.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="endDateTime" class="mb-1 fw-bold">Eind datum</label>
+                    <input type="date" name="endDateTime" class="form-control" id="endDateTime" required [(ngModel)]="concert.endDateTime">
+                    <div class="invalid-feedback">
+                        Dit veld is verplicht.
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="location" class="mb-1 fw-bold">Locatie</label>
+                    <input type="text" name="location" class="form-control" id="location" [(ngModel)]="concert.location" #location="ngModel" minlength="3" required [ngClass]="{ 'is-invalid': location.invalid }">
+                    <div *ngIf="location.invalid && location.touched" class="invalid-feedback">
+                        <div *ngIf="location.errors!['required']">
+                            Locatie is verplicht.
+                        </div>
+                        <div *ngIf="location.errors!['minlength']">
+                            Locatie moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="artist" class="mb-1 fw-bold">Artiest</label>
+                    <input type="text" name="artist" class="form-control" id="artist" [(ngModel)]="concert.artist" #artist="ngModel" minlength="3" required [ngClass]="{ 'is-invalid': artist.invalid }">
+                    <div *ngIf="artist.invalid && artist.touched" class="invalid-feedback">
+                        <div *ngIf="artist.errors!['required']">
+                            Artiest is verplicht.
+                        </div>
+                        <div *ngIf="artist.errors!['minlength']">
+                            Artiest moet minimaal 3 karakters lang zijn.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="price" class="mb-1 fw-bold">Prijs ticket</label>
+                    <input type="number" name="price" class="form-control" step="1" id="price" [(ngModel)]="concert.price" #price="ngModel" min="1" required [ngClass]="{ 'is-invalid': price.invalid }">
+                    <div *ngIf="price.invalid && price.touched" class="invalid-feedback">
+                        <div *ngIf="price.errors!['required']">
+                            Prijs is verplicht.
+                        </div>
+                        <div *ngIf="price.errors!['min']">
+                            Prijs moet groter zijn dan 0€.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4 mx-auto">
+                    <label for="amountTickets" class="mb-1 fw-bold">Aantal tickets</label>
+                    <input type="number" name="amountTickets" class="form-control" step="1" id="amountTickets" required [(ngModel)]="concert.amountTickets" #amountTickets="ngModel" min="1" required [ngClass]="{ 'is-invalid': amountTickets.invalid }">
+                    <div *ngIf="amountTickets.invalid && amountTickets.touched" class="invalid-feedback">
+                        <div *ngIf="amountTickets.errors!['required']">
+                            Aantal tickets is verplicht.
+                        </div>
+                        <div *ngIf="amountTickets.errors!['min']">
+                            Aantal tickets moet groter zijn dan 0.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mx-auto mb-3 flex-xl-row flex-column d-flex justify-content-between">
+                <a routerLink=".." class="btn primary-btn secondary-btn mt-3">Ga terug</a>
+                <button class="btn primary-btn mt-3" [disabled]="!form.valid" type="submit">Aanmaken</button>
+            </div>
+        </form>
+    </div>
+</div>
