@@ -7,20 +7,19 @@
             <div class="col-12 grey-bg p-5 my-5 boxing-shadow">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <h1>Coldplay - Music Of The Spheres World Tour</h1>
-                        <p>De Music of the Spheres World Tour is de achtste concerttournee die momenteel wordt ondernomen door de Britse rockband Coldplay. Het werd aangekondigd op 14 oktober 2021 ter ondersteuning van hun negende studioalbum Music of the
-                            Spheres en markeerde een terugkeer naar live optreden na de COVID-19-pandemie.</p>
+                        <h1>{{ concert?.name }}</h1>
+                        <p>{{ concert?.description }}</p>
                         <div class="col-12 d-flex mt-4">
                             <i class="fa-solid fa-calendar-days concert-icon"></i>
-                            <p class="my-auto"><span class="bold-text">Datum:</span> Sun Jul 16 2023 | 20:00:00</p>
+                            <p class="my-auto"><span class="bold-text">Datum:</span> {{ concert?.startDateTime | date:'short' }}</p>
                         </div>
                         <div class="col-12 d-flex mt-4">
                             <i class="fa-solid fa-location-dot concert-icon"></i>
-                            <p class="my-auto"><span class="bold-text">Locatie:</span> Johan Cruijff ArenA, Amsterdam, Nederland</p>
+                            <p class="my-auto"><span class="bold-text">Locatie:</span> {{ concert?.location }}</p>
                         </div>
                         <div class="col-12 d-flex mt-4">
                             <i class="fa-solid fa-euro-sign concert-icon"></i>
-                            <p class="my-auto"><span class="bold-text">Prijs:</span> 200</p>
+                            <p class="my-auto"><span class="bold-text">Prijs:</span> {{ concert?.price }}</p>
                         </div>
                         <div class="col-12 mt-5">
                             <div class="row">
