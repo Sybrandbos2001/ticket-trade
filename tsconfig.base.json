@@ -17,7 +17,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ticket-trade/shared/domains": [
+        "libs/shared/domains/src/index.ts"
+      ],
+      "@ticket-trade/shared/services": [
+        "libs/shared/services/src/index.ts"
+      ]
+    }
   },
   "exclude": [
     "node_modules",
