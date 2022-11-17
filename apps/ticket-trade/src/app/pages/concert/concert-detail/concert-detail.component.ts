@@ -10,6 +10,7 @@ export class ConcertDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
