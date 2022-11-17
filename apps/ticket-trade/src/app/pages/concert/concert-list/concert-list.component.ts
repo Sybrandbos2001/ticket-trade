@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConcertService } from '@ticket-trade/shared/services';
 import { Concert } from '@ticket-trade/shared/domains';
 
+
 @Component({
   selector: 'ticket-trade-concert-list',
   templateUrl: './concert-list.component.html',

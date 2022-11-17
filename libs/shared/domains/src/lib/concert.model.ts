@@ -1,10 +1,11 @@
 export interface Concert {
-  id: number;
+  id: string;
   name: string;
   description: string;
   startDateTime: Date;
   endDateTime: Date;
-  amountTickets: number;
   location: string;
   artist: string;
+  price: number;
+  amountTickets: number;
 }

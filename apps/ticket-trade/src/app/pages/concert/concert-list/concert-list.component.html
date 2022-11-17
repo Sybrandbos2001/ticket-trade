@@ -1,15 +1,14 @@
 <main>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 my-5 p-5 grey-bg boxing-shadow">
+    <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-6">
-            <h1>Aankomende <span class="title-blue">concerten</span></h1>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="float-none float-lg-end mb-5 mb-lg-0">
-              <a class="btn create-btn mt-3"
-                ><i
+            <div class="col-12 my-5 p-5 grey-bg boxing-shadow">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <h1>Aankomende <span class="title-blue">concerten</span></h1>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="float-none float-lg-end mb-5 mb-lg-0">
+                            <a class="btn create-btn mt-3"><i
                   id="create-concert-btn-icon"
                   class="fa-solid fa-square-plus"
                 ></i
@@ -33,28 +32,28 @@
               <tbody>
                 <tr *ngFor="let concert of concerts">
                   <td>{{ concert.name }}</td>
-                  <td>{{ concert.startDateTime.toLocaleDateString() }}</td>
+                  <td>{{ concert.startDateTime | date :'medium' }}</td>
                   <td>
-                    <a class="btn create-btn detail-btn"
+                    <a
+                      routerLink="{{ concert.id }}"
+                      class="btn create-btn detail-btn"
                       ><i class="fa-solid fa-eye"></i
                     ></a>
-                  </td>
-                  <td>
-                    <a class="btn create-btn edit-btn"
-                      ><i class="fa-solid fa-pen-to-square"></i
+                            </td>
+                            <td>
+                                <a class="btn create-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i
                     ></a>
-                  </td>
-                  <td>
-                    <a class="btn create-btn edit-btn delete-btn"
-                      ><i class="fa-solid fa-trash"></i
+                            </td>
+                            <td>
+                                <a class="btn create-btn edit-btn delete-btn"><i class="fa-solid fa-trash"></i
                     ></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 </main>
