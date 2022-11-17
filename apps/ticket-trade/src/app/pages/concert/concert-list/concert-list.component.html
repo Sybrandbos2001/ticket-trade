@@ -35,7 +35,9 @@
                   <td>{{ concert.name }}</td>
                   <td>{{ concert.startDateTime.toLocaleDateString() }}</td>
                   <td>
-                    <a class="btn create-btn detail-btn"
+                    <a
+                      routerLink="{{ concert.id }}"
+                      class="btn create-btn detail-btn"
                       ><i class="fa-solid fa-eye"></i
                     ></a>
                   </td>
