@@ -46,4 +46,8 @@ export class ConcertService {
   public getConcerts(): Concert[] {
     return this.concerts;
   }
+
+  public getConcertById(Id: number): Concert {
+    return this.concerts.filter((concert: Concert) => concert.id === Id)[0];
+  }
 }
