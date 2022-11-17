@@ -13,10 +13,7 @@ export class ConcertDetailComponent implements OnInit {
   id: string | null | undefined;
   concert: Concert | undefined;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private concertService: ConcertService) { 
+  constructor(private route: ActivatedRoute, private router: Router, private concertService: ConcertService) { 
   }
 
   ngOnInit(): void {

@@ -24,10 +24,10 @@
                         <a routerLink="{{ concert.id }}" class="btn create-btn detail-btn"><i class="fa-solid fa-eye"></i></a>
                     </td>
                     <td>
-                        <a class="btn create-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a routerLink="{{ concert.id }}/aanpassen" class="btn create-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
                     </td>
                     <td>
-                        <a class="btn create-btn edit-btn delete-btn"><i class="fa-solid fa-trash"></i></a>
+                        <a (click)="removeConcert(concert)" class="btn create-btn edit-btn delete-btn"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             </tbody>

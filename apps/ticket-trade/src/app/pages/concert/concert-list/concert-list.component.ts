@@ -20,4 +20,9 @@ export class ConcertListComponent implements OnInit {
   getConcerts(): void {
     this.concerts = this.concertService.getConcerts();
   }
+
+  removeConcert(concert: Concert): void {
+    console.log(concert);
+    this.concertService.removeConcert(concert.id);
+  }
 }

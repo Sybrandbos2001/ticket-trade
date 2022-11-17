@@ -3,6 +3,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { ConcertComponent } from './pages/concert/concert.component';
 import { ConcertDetailComponent } from './pages/concert/concert-detail/concert-detail.component';
 import { ConcertCreateComponent } from './pages/concert/concert-create/concert-create.component';
+import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.component';
 
 
 export const appRoutes: Route[] = [
@@ -12,6 +13,10 @@ export const appRoutes: Route[] = [
       {
         path: 'toevoegen',
         component: ConcertCreateComponent,
+      },
+      {
+        path: ':id/aanpassen',
+        component: ConcertEditComponent,
       },
       {
         path: ':id',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConcertService } from '@ticket-trade/shared/services';
 
 @Component({
   selector: 'ticket-trade-concert',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcertComponent implements OnInit {
 
-  constructor() { }
+  constructor(private concertService: ConcertService) { }
 
   ngOnInit(): void {
+    
   }
-
 }
