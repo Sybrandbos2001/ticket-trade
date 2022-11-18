@@ -1,3 +1,1 @@
-
-        export * from './lib/shared-domains.module';
-        
+export * from './lib/concert.model';

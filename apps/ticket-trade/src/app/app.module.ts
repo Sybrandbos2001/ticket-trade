@@ -1,23 +1,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationComponent } from './shared/navigation/navigation.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { ConcertListComponent } from './pages/concert/concert-list/concert-list.component';
+import { ConcertDetailComponent } from './pages/concert/concert-detail/concert-detail.component';
+import { ConcertCreateComponent } from './pages/concert/concert-create/concert-create.component';
+import { ConcertComponent } from './pages/concert/concert.component';
+import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NxWelcomeComponent
+    NavigationComponent,
+    FooterComponent,
+    LandingComponent,
+    ConcertListComponent,
+    ConcertDetailComponent,
+    ConcertCreateComponent,
+    ConcertComponent,
+    ConcertEditComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
-    NgbModule
+    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    NgbModule,
+    FormsModule,
+    NgxImageZoomModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,3 +1,30 @@
 import { Route } from '@angular/router';
+import { LandingComponent } from './pages/landing/landing.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ConcertComponent } from './pages/concert/concert.component';
+import { ConcertDetailComponent } from './pages/concert/concert-detail/concert-detail.component';
+import { ConcertCreateComponent } from './pages/concert/concert-create/concert-create.component';
+import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.component';
 
-export const appRoutes: Route[] = [];
+export const appRoutes: Route[] = [
+  { path: '', component: LandingComponent },
+  {
+    path: 'concerten',
+    component: ConcertComponent,
+    children: [
+      {
+        path: 'toevoegen',
+        component: ConcertCreateComponent,
+      },
+      {
+        path: ':id/aanpassen',
+        component: ConcertEditComponent,
+      },
+      {
+        path: ':id',
+        component: ConcertDetailComponent,
+      },
+    ],
+  },
+  { path: 'about', component: AboutComponent },
+];

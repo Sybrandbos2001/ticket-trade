@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <h1>Aankomende <span class="title-blue">concerten</span></h1>
+    </div>
+    <div class="col-12 col-lg-4">
+        <div class="float-none float-lg-end mb-5 mb-lg-0">
+            <a routerLink="toevoegen" class="btn create-btn mt-3"><i id="create-concert-btn-icon" class="fa-solid fa-square-plus"></i>Toevoegen</a>
+        </div>
+    </div>
+    <div class="col-12 my-5 table-responsive">
+        <table class="table table-striped custom-table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">Artiest</th>
+                    <th scope="col">Bekijken</th>
+                    <th scope="col">Aanpassen</th>
+                    <th scope="col">Verwijderen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let concert of concerts">
+                    <td>{{ concert.artist }}</td>
+                    <td>
+                        <a routerLink="{{ concert.id }}" class="btn create-btn detail-btn"><i class="fa-solid fa-eye"></i></a>
+                    </td>
+                    <td>
+                        <a routerLink="{{ concert.id }}/aanpassen" class="btn create-btn edit-btn"><i class="fa-solid fa-pen-to-square"></i></a>
+                    </td>
+                    <td>
+                        <a (click)="removeConcert(concert)" class="btn create-btn edit-btn delete-btn"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

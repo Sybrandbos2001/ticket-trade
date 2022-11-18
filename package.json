@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/datetime-picker": "^8.0.0",
     "@angular/animations": "~14.2.0",
     "@angular/common": "~14.2.0",
     "@angular/compiler": "~14.2.0",
@@ -20,7 +21,9 @@
     "@ng-bootstrap/ng-bootstrap": "^13.1.0",
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.0",
+    "ngx-image-zoom": "^1.0.1",
     "rxjs": "~7.5.0",
+    "sweetalert2": "^11.6.9",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
