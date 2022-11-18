@@ -40,6 +40,28 @@ export class ConcertService {
         price: 180,
         amountTickets: 1800,
       },
+      {
+        id: '4',
+        name: 'Racoon',
+        description:'Racoon is een Nederlandse band die actief is sinds 1997. Ze werden bekend als een melodieuze rockgroep, maar legden zich in de loop der jaren vaker toe op singer-songwriter-achtig repertoire, met een prominente rol voor de akoestische gitaar.',
+        startDateTime: new Date('Wen Nov 23 2022 20:00:00'),
+        endDateTime: new Date('Wen Nov 23 2022 23:00:00'),
+        location: 'TivoliVredenburg, Utrecht, Nederland',
+        artist: 'Racoon',
+        price: 60,
+        amountTickets: 1800,
+      },
+      {
+        id: '5',
+        name: 'Twenty One Pilots',
+        description:'Twenty One Pilots (gestileerd als twenty øne piløts) is een Amerikaanse band uit Columbus, Ohio.',
+        startDateTime: new Date('Wen Nov 23 2022 20:00:00'),
+        endDateTime: new Date('Wen Nov 23 2022 23:00:00'),
+        location: 'Volkshaus Basel, Bazel, Zwitserland',
+        artist: 'Twenty One Pilots',
+        price: 100,
+        amountTickets: 1800,
+      },
     ];
   }
 
