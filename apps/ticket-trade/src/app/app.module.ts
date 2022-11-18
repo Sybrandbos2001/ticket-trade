@@ -14,6 +14,7 @@ import { ConcertDetailComponent } from './pages/concert/concert-detail/concert-d
 import { ConcertCreateComponent } from './pages/concert/concert-create/concert-create.component';
 import { ConcertComponent } from './pages/concert/concert.component';
 import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.
     ConcertCreateComponent,
     ConcertComponent,
     ConcertEditComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
