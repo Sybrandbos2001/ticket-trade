@@ -18,9 +18,7 @@
                 <div class="col-12 mb-4 mx-auto">
                     <label for="description" class="mb-1 fw-bold">Omschrijving</label>
                     <textarea name="description" class="form-control" id="description" required [(ngModel)]="concert.description" #description="ngModel" minlength="3" required></textarea>
-                    <div *ngIf="
-              description.invalid && (description.dirty || description.touched)
-            " class="alert alert-danger mt-1">
+                    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="description.errors!['required']">
                             Omschrijving is verplicht
                         </div>
@@ -31,11 +29,8 @@
                 </div>
                 <div class="col-12 mb-4 mx-auto">
                     <label for="startDateTime" class="mb-1 fw-bold">Start datum</label>
-                    <input type="date" name="startDateTime" class="form-control" id="startDateTime" required [(ngModel)]="concert.startDateTime" #startDateTime="ngModel" />
-                    <div *ngIf="
-              startDateTime.invalid &&
-              (startDateTime.dirty || startDateTime.touched)
-            " class="alert alert-danger mt-1">
+                    <input type="datetime-local" name="startDateTime" class="form-control" id="startDateTime" required [(ngModel)]="concert.startDateTime" #startDateTime="ngModel" />
+                    <div *ngIf="startDateTime.invalid && (startDateTime.dirty || startDateTime.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="startDateTime.errors!['required']">
                             Start datum tijd is verplicht.
                         </div>
@@ -43,10 +38,8 @@
                 </div>
                 <div class="col-12 mb-4 mx-auto">
                     <label for="endDateTime" class="mb-1 fw-bold">Eind datum</label>
-                    <input type="date" name="endDateTime" class="form-control" id="endDateTime" required [(ngModel)]="concert.endDateTime" #endDateTime="ngModel" />
-                    <div *ngIf="
-              endDateTime.invalid && (endDateTime.dirty || endDateTime.touched)
-            " class="alert alert-danger mt-1">
+                    <input type="datetime-local" name="endDateTime" class="form-control" id="endDateTime" required [(ngModel)]="concert.endDateTime" #endDateTime="ngModel" />
+                    <div *ngIf="endDateTime.invalid && (endDateTime.dirty || endDateTime.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="endDateTime.errors!['required']">
                             Start datum tijd is verplicht.
                         </div>
