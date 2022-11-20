@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-12 mb-4 mx-auto">
                     <label for="startDateTime" class="mb-1 fw-bold">Start datum</label>
-                    <input type="datetime-local" name="startDateTime" class="form-control" id="startDateTime" required [(ngModel)]="concert!.startDateTime" #startDateTime="ngModel" />
+                    <input type="datetime-local" name="startDateTime" class="form-control" id="startDateTime" required [(ngModel)]="concertStartDateTime" #startDateTime="ngModel" />
                     <div *ngIf="
               startDateTime.invalid &&
               (startDateTime.dirty || startDateTime.touched)
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-12 mb-4 mx-auto">
                     <label for="endDateTime" class="mb-1 fw-bold">Eind datum</label>
-                    <input type="datetime-local" name="endDateTime" class="form-control" id="endDateTime" required [(ngModel)]="concert!.endDateTime" #endDateTime="ngModel" />
+                    <input type="datetime-local" name="endDateTime" class="form-control" id="endDateTime" required [(ngModel)]="concertEndDateTime" #endDateTime="ngModel" />
                     <div *ngIf="
               endDateTime.invalid && (endDateTime.dirty || endDateTime.touched)
             " class="alert alert-danger mt-1">

@@ -10,6 +10,8 @@ import { Concert } from '@ticket-trade/shared/domains';
 })
 export class ConcertEditComponent implements OnInit {
 
+  concertStartDateTime: string = "";
+  concertEndDateTime: string = "";
   id: string | null | undefined;
   concert: Concert = {
     id: "",
@@ -30,10 +32,24 @@ export class ConcertEditComponent implements OnInit {
       if (this.id) {
           // Bestaand concert
           this.concert = this.concertService.getConcertById(this.id);
+          this.concertStartDateTime = this.toDateString(this.concert.startDateTime);
+          this.concertEndDateTime = this.toDateString(this.concert.endDateTime);
       } else{
         this.router.navigateByUrl('concerten');
       }
   });
+  }
+
+  private toDateString(date: Date): string {
+    return (
+      date.getFullYear().toString() +
+      '-' +
+      ('0' + (date.getMonth() + 1)).slice(-2) +
+      '-' +
+      ('0' + date.getDate()).slice(-2) +
+      'T' +
+      date.toTimeString().slice(0, 5)
+    );
   }
 
   onSubmit() {
