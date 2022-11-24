@@ -16,6 +16,7 @@ import { ConcertCreateComponent } from './pages/concert/concert-create/concert-c
 import { ConcertComponent } from './pages/concert/concert.component';
 import { ConcertEditComponent } from './pages/concert/concert-edit/concert-edit.component';
 import { AboutComponent } from './pages/about/about.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AboutComponent } from './pages/about/about.component';
     ConcertComponent,
     ConcertEditComponent,
     AboutComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
