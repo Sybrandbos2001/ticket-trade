@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConcertService } from '@ticket-trade/shared/services';
-import { Concert } from '@ticket-trade/shared/domains';
+import { ConcertService, LocationService } from '@ticket-trade/shared/services';
+import { Concert, Location} from '@ticket-trade/shared/domains';
 
 @Component({
-  selector: 'ticket-trade-concert-edit',
-  templateUrl: './concert-edit.component.html',
-  styleUrls: ['./concert-edit.component.css']
+  selector: 'ticket-trade-admin-concert-edit',
+  templateUrl: './admin-concert-edit.component.html',
+  styleUrls: ['./admin-concert-edit.component.css']
 })
-export class ConcertEditComponent implements OnInit {
+export class AdminConcertEditComponent implements OnInit {
 
   concertStartDateTime: string = "";
   concertEndDateTime: string = "";
@@ -19,11 +19,12 @@ export class ConcertEditComponent implements OnInit {
     description: "",
     startDateTime: new Date(),
     endDateTime: new Date(),
-    location: "",
+    locationId: "",
     artist: "",
     price: 0,
     amountTickets: 0,
 };
+
   constructor(private route: ActivatedRoute, private router: Router, private concertService: ConcertService) { }
 
   ngOnInit(): void {
@@ -35,7 +36,7 @@ export class ConcertEditComponent implements OnInit {
           this.concertStartDateTime = this.toDateString(this.concert.startDateTime);
           this.concertEndDateTime = this.toDateString(this.concert.endDateTime);
       } else{
-        this.router.navigateByUrl('concerten');
+        this.router.navigateByUrl('admin/concerten');
       }
   });
   }
@@ -54,7 +55,7 @@ export class ConcertEditComponent implements OnInit {
 
   onSubmit() {
     this.concertService.editConcert(this.concert);
-    this.router.navigateByUrl('concerten');
+    this.router.navigateByUrl('admin/concerten');
   }
 
 }
