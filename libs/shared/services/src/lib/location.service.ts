@@ -48,7 +48,7 @@ export class LocationService {
         country: 'Nederland'
       },
       {
-        id: '4',
+        id: '5',
         name: 'MEZZ Breda',
         surface: 2000,
         street: 'Keizerstraat',

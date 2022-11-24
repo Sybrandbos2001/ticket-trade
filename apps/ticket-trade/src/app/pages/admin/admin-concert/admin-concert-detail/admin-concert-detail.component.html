@@ -6,19 +6,19 @@
         <h1>{{ concert?.name }}</h1>
         <p>{{ concert?.description }}</p>
         <div class="col-12 d-flex mt-4">
-            <i class="fa-solid fa-calendar-days concert-icon"></i>
+            <i class="fa-solid fa-calendar-days detail-icon"></i>
             <p class="my-auto">
                 <span class="bold-text">Datum:</span> {{ concert?.startDateTime | date: 'short' }}
             </p>
         </div>
         <div class="col-12 d-flex mt-4">
-            <i class="fa-solid fa-location-dot concert-icon"></i>
+            <i class="fa-solid fa-location-dot detail-icon"></i>
             <p class="my-auto">
                 <span class="bold-text">Locatie:</span> {{ concert?.location }}
             </p>
         </div>
         <div class="col-12 d-flex mt-4">
-            <i class="fa-solid fa-euro-sign concert-icon"></i>
+            <i class="fa-solid fa-euro-sign detail-icon"></i>
             <p class="my-auto">
                 <span class="bold-text">Prijs:</span> {{ concert?.price }}
             </p>
