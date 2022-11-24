@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -54,6 +56,8 @@ import { AdminLocationCreateComponent } from './pages/admin/admin-location/admin
     NgbModule,
     FormsModule,
     NgxImageZoomModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

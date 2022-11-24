@@ -1,63 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Location } from '@ticket-trade/shared/domains';
+import { SeedService } from './seed.service';
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
   private locations: Location[];
-  constructor() {
+  constructor(private seedService: SeedService) {
     //Seed data
-    this.locations = [
-      {
-        id: '1',
-        name: 'Rotterdam Ahoy',
-        surface: 30000,
-        street: 'Ahoyweg',
-        houseNumber: 10,
-        postalCode: '3084 BA',
-        city: 'Rotterdam',
-        country: 'Nederland'
-      },
-      {
-        id: '2',
-        name: 'Breepark',
-        surface: 8300,
-        street: 'Bavelseparklaan',
-        houseNumber: 7,
-        postalCode: '4817 ZX',
-        city: 'Breda',
-        country: 'Nederland'
-      },
-      {
-        id: '3',
-        name: 'AFAS Live',
-        surface: 10000,
-        street: 'Johan Cruijff Boulevard',
-        houseNumber: 590,
-        postalCode: '1101 DS',
-        city: 'Amsterdam',
-        country: 'Nederland'
-      },
-      {
-        id: '4',
-        name: 'Zeelandhallen Goes',
-        surface: 15000,
-        street: 'Da Vinciplein',
-        houseNumber: 1,
-        postalCode: '4426 GX',
-        city: 'Goes',
-        country: 'Nederland'
-      },
-      {
-        id: '5',
-        name: 'MEZZ Breda',
-        surface: 2000,
-        street: 'Keizerstraat',
-        houseNumber: 101,
-        postalCode: '4811 HL',
-        city: 'Breda',
-        country: 'Nederland'
-      },
-    ];
+    this.locations = this.seedService.getLocationSeedData();
   }
 
   public getLocations(): Location[] {

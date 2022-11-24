@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ConcertService } from '@ticket-trade/shared/services';
-import { Concert } from '@ticket-trade/shared/domains';
+import { ConcertService, LocationService } from '@ticket-trade/shared/services';
+import { Concert, Location} from '@ticket-trade/shared/domains';
 
 @Component({
   selector: 'ticket-trade-admin-concert-edit',
@@ -19,7 +19,7 @@ export class AdminConcertEditComponent implements OnInit {
     description: "",
     startDateTime: new Date(),
     endDateTime: new Date(),
-    location: "",
+    locationId: "",
     artist: "",
     price: 0,
     amountTickets: 0,
@@ -36,7 +36,7 @@ export class AdminConcertEditComponent implements OnInit {
           this.concertStartDateTime = this.toDateString(this.concert.startDateTime);
           this.concertEndDateTime = this.toDateString(this.concert.endDateTime);
       } else{
-        this.router.navigateByUrl('concerten');
+        this.router.navigateByUrl('admin/concerten');
       }
   });
   }
@@ -55,7 +55,7 @@ export class AdminConcertEditComponent implements OnInit {
 
   onSubmit() {
     this.concertService.editConcert(this.concert);
-    this.router.navigateByUrl('concerten');
+    this.router.navigateByUrl('admin/concerten');
   }
 
 }
