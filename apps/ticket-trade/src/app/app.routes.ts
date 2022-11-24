@@ -8,6 +8,10 @@ import { AdminConcertComponent } from './pages/admin/admin-concert/admin-concert
 import { AdminConcertCreateComponent } from './pages/admin/admin-concert/admin-concert-create/admin-concert-create.component';
 import { AdminConcertEditComponent } from './pages/admin/admin-concert/admin-concert-edit/admin-concert-edit.component';
 import { AdminConcertDetailComponent } from './pages/admin/admin-concert/admin-concert-detail/admin-concert-detail.component';
+import { AdminLocationComponent } from './pages/admin/admin-location/admin-location.component';
+import { AdminLocationCreateComponent } from './pages/admin/admin-location/admin-location-create/admin-location-create.component';
+import { AdminLocationEditComponent } from './pages/admin/admin-location/admin-location-edit/admin-location-edit.component';
+import { AdminLocationDetailComponent } from './pages/admin/admin-location/admin-location-detail/admin-location-detail.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: LandingComponent },
@@ -36,6 +40,22 @@ export const appRoutes: Route[] = [
       {
         path: ':id',
         component: AdminConcertDetailComponent,
+      },
+    ], 
+  },
+  { path: 'admin/locaties', component: AdminLocationComponent,
+    children: [
+      {
+        path: 'toevoegen',
+        component: AdminLocationCreateComponent,
+      },
+      {
+        path: ':id/aanpassen',
+        component: AdminLocationEditComponent,
+      },
+      {
+        path: ':id',
+        component: AdminLocationDetailComponent,
       },
     ], 
   },
