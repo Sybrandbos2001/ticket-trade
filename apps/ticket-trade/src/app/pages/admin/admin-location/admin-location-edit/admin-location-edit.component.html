@@ -10,9 +10,7 @@
                     <input type="text" name="name" class="form-control" id="name" [(ngModel)]="location.name" #name="ngModel" minlength="3" required />
                     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="name.errors!['required']">Naam is verplicht.</div>
-                        <div *ngIf="name.errors!['minlength']">
-                            Naam moet minimaal 3 karakters lang zijn.
-                        </div>
+                        <div *ngIf="name.errors!['minlength']">Naam moet minimaal 3 karakters lang zijn.</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -20,9 +18,7 @@
                     <input type="number" name="surface" class="form-control" step="1" id="surface" [(ngModel)]="location.surface" #surface="ngModel" min="1" required />
                     <div *ngIf="surface.invalid && (surface.dirty || surface.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="surface.errors!['required']">Oppervlakte is verplicht.</div>
-                        <div *ngIf="surface.errors!['min']">
-                            Oppervlakte moet groter zijn dan 0 (m2).
-                        </div>
+                        <div *ngIf="surface.errors!['min']">Oppervlakte moet groter zijn dan 0 (m2).</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -30,9 +26,7 @@
                     <input type="text" name="street" class="form-control" id="street" [(ngModel)]="location.street" #street="ngModel" minlength="3" required />
                     <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="street.errors!['required']">Straat is verplicht.</div>
-                        <div *ngIf="street.errors!['minlength']">
-                            Straat moet minimaal 3 karakters lang zijn.
-                        </div>
+                        <div *ngIf="street.errors!['minlength']">Straat moet minimaal 3 karakters lang zijn.</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -40,9 +34,7 @@
                     <input type="number" name="houseNumber" class="form-control" step="1" id="houseNumber" [(ngModel)]="location.houseNumber" #houseNumber="ngModel" min="1" required />
                     <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="houseNumber.errors!['required']">Huisnummer is verplicht.</div>
-                        <div *ngIf="houseNumber.errors!['min']">
-                            Huisnummer moet groter zijn dan 0.
-                        </div>
+                        <div *ngIf="houseNumber.errors!['min']">Huisnummer moet groter zijn dan 0.</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -50,9 +42,7 @@
                     <input type="text" name="postalCode" class="form-control" id="postalCode" [(ngModel)]="location.postalCode" #postalCode="ngModel" minlength="6" required />
                     <div *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="postalCode.errors!['required']">Postcode is verplicht.</div>
-                        <div *ngIf="postalCode.errors!['minlength']">
-                            Postcode moet minimaal 6 karakters bevatten.
-                        </div>
+                        <div *ngIf="postalCode.errors!['minlength']">Postcode moet minimaal 6 karakters bevatten.</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -60,9 +50,7 @@
                     <input type="text" name="city" class="form-control" id="city" [(ngModel)]="location.city" #city="ngModel" minlength="3" required />
                     <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="city.errors!['required']">Stad is verplicht.</div>
-                        <div *ngIf="city.errors!['minlength']">
-                            Stad moet minimaal 3 karakters lang zijn.
-                        </div>
+                        <div *ngIf="city.errors!['minlength']">Stad moet minimaal 3 karakters lang zijn.</div>
                     </div>
                 </div>
                 <div class="col-12 mb-4 mx-auto">
@@ -70,23 +58,14 @@
                     <input type="text" name="country" class="form-control" id="country" [(ngModel)]="location.country" #country="ngModel" minlength="3" required />
                     <div *ngIf="country.invalid && (country.dirty || country.touched)" class="alert alert-danger mt-1">
                         <div *ngIf="country.errors!['required']">Land is verplicht.</div>
-                        <div *ngIf="country.errors!['minlength']">
-                            Land moet minimaal 3 karakters lang zijn.
-                        </div>
+                        <div *ngIf="country.errors!['minlength']">Land moet minimaal 3 karakters lang zijn.</div>
                     </div>
                 </div>
             </div>
             <div class="col-12 mx-auto mb-3 flex-xl-row flex-column d-flex justify-content-between">
-                <a routerLink=".." class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Annuleren</a
-        >
-        <button
-          class="btn primary-btn mt-3"
-          [disabled]="!form.valid"
-          type="submit"
-        >
-          Aanpassen <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-    </form>
-  </div>
+                <a routerLink="/admin/locaties" class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Annuleren</a>
+                <button class="btn primary-btn mt-3" [disabled]="!form.valid" type="submit">Aanpassen <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </form>
+    </div>
 </div>

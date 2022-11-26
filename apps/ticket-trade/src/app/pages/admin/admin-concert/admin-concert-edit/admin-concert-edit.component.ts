@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConcertService, LocationService } from '@ticket-trade/shared/services';
 import { Concert, Location} from '@ticket-trade/shared/domains';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'ticket-trade-admin-concert-edit',
@@ -9,6 +10,9 @@ import { Concert, Location} from '@ticket-trade/shared/domains';
   styleUrls: ['./admin-concert-edit.component.css']
 })
 export class AdminConcertEditComponent implements OnInit {
+
+  locations: Location[];
+  disableSelect = new FormControl(false);
 
   concertStartDateTime: string = "";
   concertEndDateTime: string = "";
@@ -25,7 +29,9 @@ export class AdminConcertEditComponent implements OnInit {
     amountTickets: 0,
 };
 
-  constructor(private route: ActivatedRoute, private router: Router, private concertService: ConcertService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private concertService: ConcertService, private locationService: LocationService) { 
+    this.locations = this.locationService.getLocations();
+   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -54,6 +60,8 @@ export class AdminConcertEditComponent implements OnInit {
   }
 
   onSubmit() {
+    this.concert.startDateTime = new Date(this.concertStartDateTime);
+    this.concert.endDateTime = new Date(this.concertEndDateTime);
     this.concertService.editConcert(this.concert);
     this.router.navigateByUrl('admin/concerten');
   }

@@ -49,7 +49,6 @@
                     <label for="location" class="mb-1 fw-bold">Locatie</label>
                     <mat-form-field appearance="fill" class="w-100">
                         <select matNativeControl [disabled]="disableSelect.value" class="form-select d-block w-100" required name="location" id="location">
-                            <option disabled selected>Selecteer een locatie</option>
                             <option *ngFor="let location of locations" value="{{ location.id }}">{{ location.name }}</option>
                         </select>
                     </mat-form-field>
@@ -88,16 +87,9 @@
                 </div>
             </div>
             <div class="col-12 mx-auto mb-3 flex-xl-row flex-column d-flex justify-content-between">
-                <a routerLink=".." class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Ga terug</a
-        >
-        <button
-          class="btn primary-btn mt-3"
-          [disabled]="!form.valid"
-          type="submit"
-        >
-          Aanmaken <i class="fa-solid fa-chevron-right"></i>
-        </button>
-      </div>
-    </form>
-  </div>
+                <a routerLink=".." class="btn primary-btn secondary-btn mt-3"><i class="fa-solid fa-chevron-left"></i> Ga terug</a>
+                <button class="btn primary-btn mt-3" [disabled]="!form.valid" type="submit">Aanmaken <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </form>
+    </div>
 </div>
