@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConcertCreateComponent } from './concert-create.component';
+import { AdminConcertComponent } from './admin-concert.component';
 
-describe('ConcertCreateComponent', () => {
-  let component: ConcertCreateComponent;
-  let fixture: ComponentFixture<ConcertCreateComponent>;
+describe('AdminConcertComponent', () => {
+  let component: AdminConcertComponent;
+  let fixture: ComponentFixture<AdminConcertComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConcertCreateComponent ]
+      declarations: [ AdminConcertComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ConcertCreateComponent);
+    fixture = TestBed.createComponent(AdminConcertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
