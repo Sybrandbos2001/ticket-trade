@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, IsPhoneNumber, IsString, Matches } from 'class-validator';
-import { ITicket, IUser } from "@ticket-trade/domain";
 import { TicketSchema } from '../../ticket/entities/ticket.entity';
 import { Prop } from '@nestjs/mongoose';
+import { ITicket, IUser } from '@ticket-trade/domain';
 
 export class CreateUserDto implements IUser {
     
