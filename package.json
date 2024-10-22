@@ -32,6 +32,7 @@
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^10.0.1",
     "@nestjs/testing": "^10.0.2",
+    "@nrwl/workspace": "^19.8.4",
     "@nx/cypress": "19.8.4",
     "@nx/eslint": "20.0.3",
     "@nx/eslint-plugin": "20.0.3",
