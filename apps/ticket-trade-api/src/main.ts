@@ -19,7 +19,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Ticket Trade API')
     .setDescription('API voor het beheren van tickets, gebruikers, concerten, etc.')
-    .setBasePath(`/${globalPrefix}`)  // Hier geven we aan dat de base path '/api' moet zijn
+    .setBasePath(`/${globalPrefix}`)
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, config);

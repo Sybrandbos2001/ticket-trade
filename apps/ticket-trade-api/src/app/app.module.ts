@@ -13,7 +13,7 @@ import { UserModule } from '../user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: `.env` }), // Load environment .env file
-    MongooseModule.forRoot(process.env.MONGO_URL), // Use connection string
+    MongooseModule.forRoot(process.env.NODE_ENV === 'production' ? process.env.MONGO_PROD_URL : process.env.MONGO_LOCAL_URL), // Use connection string based on environment
     ArtistModule,
     ConcertModule,
     GenreModule,

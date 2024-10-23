@@ -2,7 +2,11 @@
   "name": "@ticket-trade/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node dist/main",
+    "build": "nest build",
+    "start:prod": "node dist/main"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
