@@ -21,6 +21,10 @@ jobs:
       - name: Install Nx CLI
         run: npm install -g nx
 
+      # Reset NX project cache
+      - name: Reset NX
+        run: nx reset
+
       - name: Install Dependencies
         run: npm install
         working-directory: ./apps/ticket-trade-api
@@ -43,6 +47,10 @@ jobs:
       # Installeer Nx CLI
       - name: Install Nx CLI
         run: npm install -g nx
+
+      # Reset NX project cache
+      - name: Reset NX
+        run: nx reset
 
       - name: Install Dependencies
         run: npm install
@@ -104,6 +112,10 @@ jobs:
       # Installeer Nx CLI
       - name: Install Nx CLI
         run: npm install -g nx
+
+      # Reset NX project cache
+      - name: Reset NX
+        run: nx reset
 
       - name: Install Dependencies
         run: npm install
