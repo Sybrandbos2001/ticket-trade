@@ -11,32 +11,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+
+      # Installeer Nx CLI
+      - name: Install Nx CLI
+        run: npm install -g nx
+
       - name: Install Dependencies
         run: npm install
         working-directory: ./apps/ticket-trade-api
+
       - name: Run Tests (API)
         run: nx test ticket-trade-api
-        working-directory: ./apps/ticket-trade-api
+        working-directory: .
 
   # Testing Angular (Front-end)
   test-angular:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+
+      # Installeer Nx CLI
+      - name: Install Nx CLI
+        run: npm install -g nx
+
       - name: Install Dependencies
         run: npm install
         working-directory: ./apps/ticket-trade-app
+
       - name: Run Tests (Angular)
         run: nx test ticket-trade-app
-        working-directory: ./apps/ticket-trade-app
+        working-directory: .
 
   # Deployment for API (NestJS) on Heroku
   deploy-api:
@@ -47,10 +61,12 @@ jobs:
       - name: Setup Heroku CLI
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
+
       - name: Authenticate with Heroku
         run: heroku auth:token
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
       - name: Deploy to Heroku
         run: |
           heroku git:remote -a ticket-trade-api
@@ -64,9 +80,42 @@ jobs:
     needs: test-angular
     steps:
       - uses: actions/checkout@v2
+
       - name: Install Vercel CLI
         run: npm install -g vercel
+
       - name: Deploy to Vercel
         run: vercel --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+  # End-to-End Testing after Deployment
+  run-e2e-tests:
+    runs-on: ubuntu-latest
+    needs: [deploy-api, deploy-angular]  
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Installeer Nx CLI
+      - name: Install Nx CLI
+        run: npm install -g nx
+
+      - name: Install Dependencies
+        run: npm install
+
+      # Wait for API and Frontend to be up
+      - name: Wait for services to start
+        run: sleep 30
+
+      # Run e2e tests for API
+      - name: Run e2e tests for API
+        run: nx e2e ticket-trade-api-e2e
+
+      # Run e2e tests for Angular Frontend
+      - name: Run e2e tests for Angular
+        run: nx e2e ticket-trade-app-e2e
