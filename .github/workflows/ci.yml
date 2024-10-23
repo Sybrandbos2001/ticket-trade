@@ -19,7 +19,7 @@ jobs:
         run: npm install
         working-directory: ./apps/ticket-trade-api
       - name: Run Tests (API)
-        run: npm run test:e2e
+        run: nx test ticket-trade-api
         working-directory: ./apps/ticket-trade-api
 
   # Testing Angular (Front-end)
@@ -35,7 +35,7 @@ jobs:
         run: npm install
         working-directory: ./apps/ticket-trade-app
       - name: Run Tests (Angular)
-        run: npm run test:e2e
+        run: nx test ticket-trade-app
         working-directory: ./apps/ticket-trade-app
 
   # Deployment for API (NestJS) on Heroku
