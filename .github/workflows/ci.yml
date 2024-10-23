@@ -27,7 +27,7 @@ jobs:
 
       # Reset NX project cache after installing dependencies
       - name: Reset NX
-        run: nx reset
+        run: rm -rf node_modules/.cache/nx
 
       - name: Run Tests (API)
         run: nx test ticket-trade-api
@@ -54,7 +54,7 @@ jobs:
 
       # Reset NX project cache after installing dependencies
       - name: Reset NX
-        run: nx reset
+        run: rm -rf node_modules/.cache/nx
 
       - name: Run Tests (Angular)
         run: nx test ticket-trade-app
