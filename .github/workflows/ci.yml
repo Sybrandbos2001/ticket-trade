@@ -80,11 +80,10 @@ jobs:
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
 
-      # Heroku authenticatie
-      - name: Authenticate with Heroku
-        run: echo $HEROKU_API_KEY | heroku auth:token
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      # Voeg het Heroku API-token toe aan Git-configuratie
+      - name: Configure Git for Heroku
+        run: |
+          git config --global url."https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/".insteadOf "https://git.heroku.com/"
 
       # Push naar Heroku
       - name: Deploy to Heroku
