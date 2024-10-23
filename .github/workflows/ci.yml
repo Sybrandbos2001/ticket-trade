@@ -21,13 +21,13 @@ jobs:
       - name: Install Nx CLI
         run: npm install -g nx
 
-      # Reset NX project cache
-      - name: Reset NX
-        run: nx reset
-
       - name: Install Dependencies
         run: npm install
         working-directory: ./apps/ticket-trade-api
+
+      # Reset NX project cache after installing dependencies
+      - name: Reset NX
+        run: nx reset
 
       - name: Run Tests (API)
         run: nx test ticket-trade-api
@@ -48,13 +48,13 @@ jobs:
       - name: Install Nx CLI
         run: npm install -g nx
 
-      # Reset NX project cache
-      - name: Reset NX
-        run: nx reset
-
       - name: Install Dependencies
         run: npm install
         working-directory: ./apps/ticket-trade-app
+
+      # Reset NX project cache after installing dependencies
+      - name: Reset NX
+        run: nx reset
 
       - name: Run Tests (Angular)
         run: nx test ticket-trade-app
@@ -113,12 +113,12 @@ jobs:
       - name: Install Nx CLI
         run: npm install -g nx
 
-      # Reset NX project cache
-      - name: Reset NX
-        run: nx reset
-
       - name: Install Dependencies
         run: npm install
+
+      # Reset NX project cache after installing dependencies
+      - name: Reset NX
+        run: nx reset
 
       # Wait for API and Frontend to be up
       - name: Wait for services to start
