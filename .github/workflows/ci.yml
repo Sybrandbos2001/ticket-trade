@@ -15,19 +15,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '20.18.0' 
 
       # Installeer Nx CLI
       - name: Install Nx CLI
         run: npm install -g nx
 
+      # Verwijder NX cache
+      - name: Clear NX Cache
+        run: rm -rf node_modules/.cache/nx
+
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./apps/ticket-trade-api
 
       # Reset NX project cache after installing dependencies
       - name: Reset NX
-        run: rm -rf node_modules/.cache/nx
+        run: nx reset
 
       - name: Run Tests (API)
         run: nx test ticket-trade-api
@@ -42,19 +46,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '20.18.0'
 
       # Installeer Nx CLI
       - name: Install Nx CLI
         run: npm install -g nx
 
+      # Verwijder NX cache
+      - name: Clear NX Cache
+        run: rm -rf node_modules/.cache/nx
+
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./apps/ticket-trade-app
 
       # Reset NX project cache after installing dependencies
       - name: Reset NX
-        run: rm -rf node_modules/.cache/nx
+        run: nx reset
 
       - name: Run Tests (Angular)
         run: nx test ticket-trade-app
@@ -107,14 +115,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '20.18.0'
 
       # Installeer Nx CLI
       - name: Install Nx CLI
         run: npm install -g nx
 
+      # Verwijder NX cache
+      - name: Clear NX Cache
+        run: rm -rf node_modules/.cache/nx
+
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       # Reset NX project cache after installing dependencies
       - name: Reset NX
