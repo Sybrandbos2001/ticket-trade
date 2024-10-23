@@ -86,7 +86,7 @@ jobs:
       - name: Deploy to Heroku
         run: |
           heroku git:remote -a ticket-trade-api
-          git push heroku main
+          git push heroku master
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
 
