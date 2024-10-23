@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
       
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -42,6 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
       
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -74,6 +78,8 @@ jobs:
     needs: test-api
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
       
       # Installeer de Heroku CLI
       - name: Setup Heroku CLI
@@ -99,6 +105,8 @@ jobs:
     needs: test-angular
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
 
       # Installeer Vercel CLI
       - name: Install Vercel CLI
@@ -116,6 +124,8 @@ jobs:
     needs: deploy-api  
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
       
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -151,6 +161,8 @@ jobs:
     needs: deploy-angular
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Dit zorgt voor een volledige clone in plaats van een shallow clone
       
       - name: Setup Node.js
         uses: actions/setup-node@v2
