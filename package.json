@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node dist/main",
-    "build": "nest build",
+    "build:api": "nx build ticket-trade-api",  
+    "build:app": "nx build ticket-trade-app --prod",  
+    "build": "npm run build:api && npm run build:app",  
     "start:prod": "node dist/main"
   },
   "private": true,

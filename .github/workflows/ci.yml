@@ -47,6 +47,10 @@ jobs:
       - name: Setup Heroku CLI
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
+      - name: Authenticate with Heroku
+        run: heroku auth:token
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       - name: Deploy to Heroku
         run: |
           heroku git:remote -a ticket-trade-api
@@ -60,6 +64,8 @@ jobs:
     needs: test-angular
     steps:
       - uses: actions/checkout@v2
+      - name: Install Vercel CLI
+        run: npm install -g vercel
       - name: Deploy to Vercel
         run: vercel --prod
         env:
