@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
+  "include": ["../../../ticket-trade-api/src/app/app.module.ts"],
   "references": [
     {
       "path": "./tsconfig.spec.json"
